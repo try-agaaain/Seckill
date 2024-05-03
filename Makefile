@@ -27,9 +27,17 @@ rabbitmq:
 	RABBITMQ_USER="admin"
 	RABBITMQ_PASSWORD="admin"
 	# 创建新用户
-	sudo rabbitmqctl add_user $RABBITMQ_USER $RABBITMQ_PASSWORD
+	sudo rabbitmqctl add_user admin admin
 	# 为新用户设置权限
-	sudo rabbitmqctl set_permissions -p / $RABBITMQ_USER ".*" ".*" ".*"
-	sudo rabbitmqctl set_user_tags $RABBITMQ_USER administrator
+	sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
+	sudo rabbitmqctl set_user_tags admin administrator
 
-	python3 rabbitmqadmin declare queue name=seckill.queue  auto_delete=false durable=false  --username=admin  --password=admin 
+	# rabbitmq 前端界面
+	sudo rabbitmq-plugins enable rabbitmq_management
+
+	# 列出rabbitmq用户
+	sudo rabbitmqctl list_users
+
+delete_rabbitmq_user:
+	sudo rabbitmqctl delete_user admin
+
