@@ -18,6 +18,12 @@
 --
 -- Table structure for table `goods`
 --
+DROP DATABASE IF EXISTS seckill;
+CREATE DATABASE IF NOT EXISTS seckill;
+USE seckill;
+
+SELECT 'CREATING DATABASE STRUCTURE' as 'INFO';
+
 
 DROP TABLE IF EXISTS `goods`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
