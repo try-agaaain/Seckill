@@ -2,13 +2,12 @@ package cn.hfbin.seckill;
 
 import cn.hfbin.seckill.bo.GoodsBo;
 import cn.hfbin.seckill.dao.GoodsMapper;
-import cn.hfbin.seckill.entity.Goods;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -16,7 +15,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Slf4j
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class) // 使用JUnit 5的方式来启用Spring支持
 @SpringBootTest
 public class SeckillApplicationTests {
 

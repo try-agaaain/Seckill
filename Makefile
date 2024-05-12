@@ -1,7 +1,7 @@
 all: mysql redis rabbitmq
 
 mysql:
-	sudo apt-get install mysql-server mysql-client
+	sudo apt-get install mysql-server mysql-client -y
 	# sudo service mysql status
 	sudo service mysql start
 	
@@ -15,12 +15,12 @@ mysql:
 
 redis:
 	sudo apt update
-	sudo apt install redis-server
+	sudo apt install redis-server -y
 	sudo service redis-server start
 
 rabbitmq:
 	sudo apt-get update
-	sudo apt-get install rabbitmq-server
+	sudo apt-get install rabbitmq-server -y
 	sudo service rabbitmq-server start
 
 	# 要创建的RabbitMQ用户名和密码
